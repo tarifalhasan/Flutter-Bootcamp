@@ -18,8 +18,39 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.orangeAccent,
           centerTitle: true,
         ),
-        body: const Center(
-          child: Text('Hello, World!'),
+        body: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 16.0, left: 10),
+            child: Stack(
+              alignment: Alignment.center,
+              clipBehavior: Clip.none,
+              children: [
+                Container(
+                  height: 180,
+                  width: 350,
+                  color: Colors.green,
+                ),
+                Container(
+                  height: 100,
+                  width: 100,
+                  decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: BorderRadius.circular(100)),
+                ),
+                Positioned(
+                  top: 1,
+                  left: 0,
+                  child: Container(
+                    height: 450,
+                    width: 12,
+                    decoration: BoxDecoration(
+                        color: Colors.amber,
+                        borderRadius: BorderRadius.circular(2)),
+                  ),
+                )
+              ],
+            ),
+          ),
         ),
         drawer: const Drawer(
           child: Column(children: []),
